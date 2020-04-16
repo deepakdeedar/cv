@@ -1,0 +1,98 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            var l=0;
+            $(".post").hide();
+            $(".post1").hide();
+            $('.b1').click(function(){
+                $('.post').slideDown();
+            });
+            $('.b2').click(function(){
+                $('.post').slideUp();
+            });
+           $('.b3').click(function(){
+                
+                $(".post1").show();
+                $(".main").hide("slow");
+               var n=$("#new").val();
+               var p=$("#comment1").val();
+               document.getElementById("name").innerHTML=n;
+                document.getElementById("reply").innerHTML=p;
+            });
+            
+            
+            $('.post1').on('click','.submit',function(){
+                $(this).parent().append('<br><div class="media-left media-top"><img src="avatar1.png" class="media-object" style="width:60px"></div><div class="media-body"><h4 class="media-heading name">'+$(".n").val()+'</h4><p class="reply">'+$(".pwd").val()+'</p><button type="button" class="btn btn-success like"><span class="glyphicon glyphicon-thumbs-up"></span> Like:<span class="l">0</span></button>&nbsp;&nbsp;<button type="button" class="btn btn-danger dlike"><span class="glyphicon glyphicon-thumbs-down"></span> Dislike:<span class="d">0</span></button>&nbsp;&nbsp;<button type="button" class="btn btn-warning comment"><span class="glyphicon glyphicon-send"></span> Comment:<span class="c">0</span></button><br><br><div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input type="text" class="form-control n"></div><br><div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span> <input type="text" class="form-control pwd"></div>  <br><button type="button" class="btn btn-info submit">Reply</button><br></div></div>');
+                $(this).siblings('.comment').children('.c').text(+$(this).siblings('.comment').children('.c').text()+1);
+                
+            });
+            $('.post1').on('click','.like',function(){
+                $(this).children('.l').text(+$(this).children('.l').text()+1);
+            });
+            $('.post1').on('click','.dlike',function(){
+                $(this).children('.d').text(+$(this).children('.d').text()+1);
+            });
+        });
+    </script>
+    </head>
+    <body>
+        
+        <div class="container">
+            
+        <div class="jumbotron">
+            <h1>Social Community Discussion Board</h1><br>
+            <div class="main">
+        <label>Name:</label>
+        <input type="text" class="form-control" id="new" placeholder="Enter your name"><br>
+        <h4>To Create Post Click Below</h4>  
+        <button class="btn btn-success b1">New Post</button>
+        <div class="post"><br>
+        <input type="text" class="form-control" id="comment1" placeholder="Create post here.................."><br>
+        <button class="btn btn-info b3">Post</button>&nbsp;&nbsp;<button class="btn btn-danger b2">Cancel Post</button>
+        </div>
+        </div>
+            <div class="media post1">
+            <div class="media-left media-top">
+            <img src="avatar1.png" class="media-object" style="width:60px">
+            </div>
+            <div class="media-body">
+            <h4 class="media-heading" id="name">Media Top</h4>
+            <p id="reply">Lorem ipsum...</p>
+            <button type="button" class="btn btn-success like"><span class="glyphicon glyphicon-thumbs-up"></span> Like:<span class="l">0</span></button>
+                <button type="button" class="btn btn-danger dlike"><span class="glyphicon glyphicon-thumbs-down"></span> Dislike:<span class="d">0</span></button>
+                <button type="button" class="btn btn-warning comment"><span class="glyphicon glyphicon-send"></span> Comment:<span class="c">0</span></button>
+                <br><br>
+                
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input type="text" class="form-control n">
+            </div><br>
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span> <input type="text" class="form-control pwd">
+            </div>   <br>
+            <button type="button" class="btn btn-info submit">Reply</button><br>
+                </div>
+                </div>
+            
+        </div>
+         
+         <ul class="pager">
+  <li class="previous"><a href="work.html">Previous</a></li>
+  <li class="next"><a href="about.html">Next</a></li>
+</ul>
+        <center>  <ul class="pagination">
+  <li active><a href="cv.html">1</a></li>
+  <li><a href="game.html">2</a></li>
+  <li><a href="work.html">3</a></li>
+      <li><a href="social.html">4</a></li>
+  <li><a href="about.html">5</a></li>
+  <li><a href="#">...</a></li>
+      </ul></center></div>   
+    </body>
+</html>
